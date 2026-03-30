@@ -1,0 +1,68 @@
+@use "vars" as *;
+
+.company-numbers {
+    background-image: url("../../public/img/numbers.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &__title {
+        margin: 0 0 24px;
+        color: $blue_color;
+        font-family: $head_fonts;
+        font-size: 22px;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border-radius: $border_rad;
+        box-shadow: $box_shadow;
+    }
+
+    &__value {
+        margin: 0;
+        color: #fff;
+        font-family: $head_fonts;
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 1.2;
+    }
+
+    &__line {
+        width: 50px;
+        height: 1px;
+        margin: 0;
+        border: 0;
+        background-color: $main_color;
+    }
+
+    &__label {
+        margin: 0;
+        color: #fff;
+        font-family: $main_fonts;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.45;
+    }
+
+    @media (min-width: 820px) {
+        &__grid {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+    }
+}
