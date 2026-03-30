@@ -40,9 +40,11 @@
                     <div class="container main-swiper__content-wrap">
                         <div class="main-swiper__content">
                             <h1 class="main-swiper__title">ЗАО "ПРОГРЕСС"</h1>
-                            <p class="main-swiper__subtitle">Точные технологии. Высокие стандарты. Уверенный результат.</p>
+                            <p class="main-swiper__subtitle">Точные технологии. <br>Высокие стандарты. <br>Уверенный
+                                результат.</p>
                         </div>
                     </div>
+                    <div class="shadow"></div>
                 </div>
             </swiper-slide>
 
@@ -53,9 +55,11 @@
                     <div class="container main-swiper__content-wrap">
                         <div class="main-swiper__content">
                             <p class="main-swiper__title">ЗАО "ПРОГРЕСС"</p>
-                            <p class="main-swiper__subtitle">Точные технологии. Высокие стандарты. Уверенный результат.</p>
+                            <p class="main-swiper__subtitle">Точные технологии. <br>Высокие стандарты. <br>Уверенный
+                                результат.</p>
                         </div>
                     </div>
+                    <div class="shadow"></div>
                 </div>
             </swiper-slide>
         </swiper-container>
@@ -129,6 +133,7 @@
                 </div>
             </div>
         </div>
+        <div class="shadow_white"></div>
     </section>
 
 @endsection

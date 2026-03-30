@@ -3,21 +3,27 @@
 .company-numbers {
     background-image: url("../../public/img/numbers.webp");
     background-size: cover;
-    background-position: center;
+    background-position: top;
     background-repeat: no-repeat;
+    position: relative;
+
+    .container {
+        position: relative;
+        z-index: 2;
+    }
 
     &__title {
-        margin: 0 0 24px;
+        margin: 0 0 44px;
         color: $blue_color;
         font-family: $head_fonts;
-        font-size: 22px;
+        font-size: 32px;
         font-weight: 700;
         text-transform: uppercase;
     }
 
     &__grid {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
         gap: 16px;
     }
 
@@ -26,10 +32,11 @@
         flex-direction: column;
         gap: 12px;
         padding: 20px;
-        background-color: rgba(255, 255, 255, 0.15);
-        backdrop-filter: blur(8px);
-        -webkit-backdrop-filter: blur(8px);
-        border-radius: $border_rad;
+        background-color: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border-radius: $border_rad_big;
+        border: 1px solid rgba(255, 255, 255, 0.3);
         box-shadow: $box_shadow;
     }
 
@@ -37,7 +44,7 @@
         margin: 0;
         color: #fff;
         font-family: $head_fonts;
-        font-size: 32px;
+        font-size: 42px;
         font-weight: 700;
         line-height: 1.2;
     }
@@ -54,15 +61,21 @@
         margin: 0;
         color: #fff;
         font-family: $main_fonts;
-        font-size: 16px;
+        font-size: 22px;
         font-weight: 400;
         line-height: 1.45;
     }
 
-    @media (min-width: 820px) {
+    @media (min-width: 480px) {
+        &__grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (min-width: 1280px) {
         &__grid {
             grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
+            gap: 50px;
         }
     }
 }

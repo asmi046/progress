@@ -1,15 +1,21 @@
 @use "vars" as *;
 
 .main-swiper {
+    padding: 0;
+    border-radius: 0 0 40px 40px;
+    overflow: hidden;
+
     &__slider {
         width: 100%;
         min-height: 380px;
         display: block;
         --swiper-pagination-color: #{$main_color};
-        --swiper-pagination-bullet-inactive-color: #{$main_color};
-        --swiper-pagination-bullet-inactive-opacity: 0.45;
+        --swiper-pagination-bullet-inactive-color: white;
+        --swiper-pagination-bullet-inactive-opacity: 1;
         --swiper-pagination-bullet-opacity: 1;
         --swiper-pagination-bottom: 14px;
+        --swiper-pagination-bullet-height: 16px;
+        --swiper-pagination-bullet-width: 16px;
     }
 
     &__slide {
@@ -34,7 +40,7 @@
         width: 100%;
         display: flex;
         align-items: center;
-        padding-top: 64px;
+        padding-top: 94px;
         padding-bottom: 64px;
     }
 
@@ -48,7 +54,7 @@
         font-family: $head_fonts;
         font-size: 30px;
         line-height: 1.2;
-        font-weight: 700;
+        font-weight: 300;
     }
 
     &__subtitle {
@@ -90,11 +96,11 @@
         }
 
         &__title {
-            font-size: 38px;
+            font-size: 48px;
         }
 
         &__subtitle {
-            font-size: 24px;
+            font-size: 28px;
         }
     }
 }

@@ -42,7 +42,7 @@
                 </div>
 
                 <div class="site-footer__menu">
-                    <x-menues.puncts name="Меню в подвале"></x-menues.puncts>
+                    <x-menues.puncts></x-menues.puncts>
                 </div>
 
                 <div class="site-footer__contacts">
