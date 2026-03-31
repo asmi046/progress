@@ -3,14 +3,14 @@
 @section('main')
     <section class="section-header">
         <div class="container">
-            <h1 class="section-header__title">Контакты нашей клиники</h1>
+            <h1 class="section-header__title">Контакты нашей компании</h1>
         </div>
         <div class="shadow"></div>
     </section>
 
     <section class="breadcrumbs_section">
         <div class="container">
-            <x-breadcrumbs.main title="Контакты нашей клиники"></x-breadcrumbs.main>
+            <x-breadcrumbs.main title="Контакты нашей компании"></x-breadcrumbs.main>
         </div>
     </section>
 
