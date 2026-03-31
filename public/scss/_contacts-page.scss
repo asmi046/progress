@@ -1,0 +1,46 @@
+@use "vars" as *;
+
+.contacts_page_section {
+    h2 {
+        font-size: 22px;
+        margin: 10px 0;
+    }
+
+    .colls {
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
+
+    a {
+        color: $main_color;
+    }
+
+    .label {
+        color: $main_color;
+    }
+
+    .map_in_page {
+        border-radius: $border_rad;
+        overflow: hidden;
+        border: 1px solid $sub_color;
+    }
+}
+
+.legal_documents_list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-left: 20px;
+
+    a:hover {
+        color: $main_color;
+    }
+}
+
+@media (max-width: 480px) {
+    .contacts_page_section {
+        .colls {
+            flex-direction: column;
+        }
+    }
+}

@@ -12,12 +12,12 @@
 @use "current";
 
 @use "modal";
+@use "cols";
 
 // Схема с сайдбаром
 // @use "sidebar-schem";
 
-// Боковое беню
-// @use "menues";
+@use "menues";
 
 // Иконка бургера
 // @use "burger-icon";
@@ -28,4 +28,5 @@
 @use "about-company";
 @use "company-numbers";
 @use "pages";
+@use "contacts-page";
 @use "footer";

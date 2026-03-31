@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             SeoDataSeeder::class,
             MenuSeeder::class,
             PageSeeder::class,
+            ContactSeeder::class,
         ]);
     }
 }

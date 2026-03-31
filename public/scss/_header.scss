@@ -16,7 +16,7 @@
         img {
             display: block;
             width: auto;
-            height: 90px;
+            height: 70px;
         }
     }
 
@@ -94,6 +94,12 @@
             .menue_puncts_list {
                 margin: auto;
                 justify-content: center;
+            }
+        }
+
+        &__logo {
+            img {
+                height: 90px;
             }
         }
     }

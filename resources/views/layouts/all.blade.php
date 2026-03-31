@@ -40,7 +40,7 @@
 
                 <div class="clinic-header__contacts">
                     <a class="clinic-header__phone" href="tel:+74712343090">+7 (4712) 34-30-90</a>
-                    <a class="clinic-header__email" href="mailto:info@progress-apk.ru">info@progress-apk.ru</a>
+                    <a class="clinic-header__email" href="mailto:progress-kursk@yandex.ru">progress-kursk@yandex.ru</a>
                 </div>
             </div>
         </div>
@@ -77,7 +77,7 @@
         </div>
     </footer>
 </body>
-
+<x-menues.side-menu></x-menues.side-menu>
 <div class="modal_win" id="modal_app">
     <cookies-warning privacy-policy-link="{{ route('page', 'politika-v-oblasti-obrabotki-personalnyx-dannyx') }}"
         cookies-info-link="{{ route('page', 'o-failax-cookie') }}"
