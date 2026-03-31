@@ -45,6 +45,11 @@ class PageSeeder extends Seeder
                 'slug' => Str::slug('Инвесторам'),
                 'description' => file_get_contents(public_path('page_text/investors.html')),
             ],
+            [
+                'title' => 'Раскрытие информации',
+                'slug' => Str::slug('Раскрытие информации'),
+                'description' => file_get_contents(public_path('page_text/raskr.html')),
+            ],
         ];
 
         foreach ($data as $item) {

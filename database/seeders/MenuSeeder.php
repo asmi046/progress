@@ -29,7 +29,7 @@ class MenuSeeder extends Seeder
                 'menu_name' => 'Главное меню',
                 'title' => 'Раскрытие информации',
                 'order' => 3,
-                'lnk' => 'https://www.e-disclosure.ru/portal/company.aspx?id=39712',
+                'lnk' => '/page/raskrytie-informacii',
             ],
             [
                 'menu_name' => 'Главное меню',
