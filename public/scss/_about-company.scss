@@ -66,6 +66,16 @@
         }
     }
 
+    @media (min-width: 1024px) {
+        &__row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        &__text-block {
+            justify-content: center;
+        }
+    }
+
     @media (min-width: 1280px) {
         &__inner {
             gap: 30px;

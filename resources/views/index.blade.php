@@ -10,24 +10,7 @@
 
 @section('main')
 
-    <section id="clinic-header" class="clinic-header">
-        <div class="container">
-            <div class="clinic-header__inner">
-                <a class="clinic-header__logo" href="{{ url('/') }}" aria-label="На главную">
-                    <img src="{{ asset('img/logo.png') }}" alt="ЗАО Прогресс">
-                </a>
 
-                <div class="clinic-header__menu">
-                    <x-menues.puncts></x-menues.puncts>
-                </div>
-
-                <div class="clinic-header__contacts">
-                    <a class="clinic-header__phone" href="tel:+74712343090">+7 (4712) 34-30-90</a>
-                    <a class="clinic-header__email" href="mailto:info@progress-apk.ru">info@progress-apk.ru</a>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <section id="main-swiper" class="main-swiper">
 

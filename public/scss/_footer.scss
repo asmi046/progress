@@ -4,6 +4,9 @@
     background-color: #fff;
     padding: 20px 0;
     border-bottom: 5px solid $main_color;
+    border-top: 1px solid $main_color;
+    margin-top: auto;
+
     &__inner {
         display: flex;
         flex-direction: column;
@@ -28,12 +31,13 @@
     &__menu {
         display: flex;
         .menue_puncts_list {
-            margin: 40px auto 40px 0;
+            margin: 20px auto 20px 0;
             padding: 0;
             list-style: none;
             display: flex;
             flex-direction: column;
             gap: 10px;
+            font-size: 12px;
 
             > li > a {
                 color: $black_color;
@@ -84,7 +88,7 @@
         &__menu {
             flex: 1;
             .menue_puncts_list {
-                margin: auto 0;
+                margin: auto;
             }
         }
     }

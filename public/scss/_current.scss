@@ -3,6 +3,9 @@
 body {
     font-family: $main_fonts;
     font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
 
 h1,
@@ -85,6 +88,18 @@ img {
     background-color: white;
     // background: linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 100%);
     z-index: 1;
+}
+
+.breadcrumbs_section {
+    padding: 20px 0;
+    font-size: 14px;
+    a {
+        color: $main_color;
+
+        &:hover {
+            color: $hover_color;
+        }
+    }
 }
 
 @media (max-width: 1440px) {

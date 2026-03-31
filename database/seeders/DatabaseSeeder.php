@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             SeoDataSeeder::class,
             MenuSeeder::class,
+            PageSeeder::class,
         ]);
     }
 }

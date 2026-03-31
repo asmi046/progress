@@ -27,6 +27,25 @@
 </head>
 
 <body>
+    <section id="clinic-header" class="clinic-header">
+        <div class="container">
+            <div class="clinic-header__inner">
+                <a class="clinic-header__logo" href="{{ url('/') }}" aria-label="На главную">
+                    <img src="{{ asset('img/logo.png') }}" alt="ЗАО Прогресс">
+                </a>
+
+                <div class="clinic-header__menu">
+                    <x-menues.puncts></x-menues.puncts>
+                </div>
+
+                <div class="clinic-header__contacts">
+                    <a class="clinic-header__phone" href="tel:+74712343090">+7 (4712) 34-30-90</a>
+                    <a class="clinic-header__email" href="mailto:info@progress-apk.ru">info@progress-apk.ru</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <main id="main">
         @yield('main')
     </main>
@@ -45,6 +64,10 @@
                     <x-menues.puncts></x-menues.puncts>
                 </div>
 
+                <div class="site-footer__menu">
+                    <x-menues.puncts name="Меню по ФЗ"></x-menues.puncts>
+                </div>
+
                 <div class="site-footer__contacts">
                     <h3 class="site-footer__contacts-title">Контакты</h3>
                     <a class="site-footer__phone" href="tel:+74712343090">+7 (4712) 34-30-90</a>
@@ -54,5 +77,11 @@
         </div>
     </footer>
 </body>
+
+<div class="modal_win" id="modal_app">
+    <cookies-warning privacy-policy-link="{{ route('page', 'politika-v-oblasti-obrabotki-personalnyx-dannyx') }}"
+        cookies-info-link="{{ route('page', 'o-failax-cookie') }}"
+        privacy-policy-accept-link="{{ route('page', 'soglasie-na-obrabotku-personalnyx-dannyx') }}" />
+</div>
 
 </html>
