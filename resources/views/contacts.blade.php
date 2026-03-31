@@ -36,8 +36,6 @@
                         <div class="col">
                             <h2>Контакты</h2>
 
-
-
                             <p class="param mb-10">Адрес: {{ $contacts['adress'] }}</p>
                             <p class="param mb-10">Режим работы: {!! $contacts['work_time'] !!}</p>
                             <p class="param mb-10">тел. <a class="phone"
