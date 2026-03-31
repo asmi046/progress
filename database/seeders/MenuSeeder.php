@@ -27,6 +27,12 @@ class MenuSeeder extends Seeder
             ],
             [
                 'menu_name' => 'Главное меню',
+                'title' => 'Раскрытие информации',
+                'order' => 3,
+                'lnk' => 'https://www.e-disclosure.ru/portal/company.aspx?id=39712',
+            ],
+            [
+                'menu_name' => 'Главное меню',
                 'title' => 'Инвесторам',
                 'order' => 3,
                 'lnk' => '/page/investoram',
