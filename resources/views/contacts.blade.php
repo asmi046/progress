@@ -43,6 +43,18 @@
 
                             <p class="param mb-10">e-mail: <a class="email"
                                     href="mailto:{{ $contacts['email'] }}">{{ $contacts['email'] }}</a></p>
+
+                            <h2>Наши руководители</h2>
+                            <p class="param mb-10">{{ $contacts['gd_dolgnost'] }}: </p>
+                            <p class="param mb-10">{{ $contacts['gd_name'] }} </p>
+                            <p class="param mb-10">Телефон: <a class="phone"
+                                    href="tel:+7{{ phone_format($contacts['gd_phone']) }}">{{ $contacts['gd_phone'] }}</a>
+                            </p>
+                            <p class="param mb-10">{{ $contacts['id_dolgnost'] }}: </p>
+                            <p class="param mb-10">{{ $contacts['id_name'] }} </p>
+                            <p class="param mb-10">Телефон: <a class="phone"
+                                    href="tel:+7{{ phone_format($contacts['id_phone']) }}">{{ $contacts['id_phone'] }}</a>
+                            </p>
                         </div>
                     </div>
 
