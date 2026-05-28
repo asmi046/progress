@@ -12,10 +12,14 @@
         "php": "^8.3",
         "asmi046/site_skelet": "^1.0",
         "laravel/framework": "^13.0",
-        "laravel/tinker": "^3.0"
+        "laravel/tinker": "^3.0",
+        "moonshine/moonshine": "^4.14",
+        "moonshine/ru": "^1.0",
+        "moonshine/tinymce": "^2.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
+        "laravel-lang/moonshine": "^1.9",
         "laravel/boost": "^2.0",
         "laravel/pail": "^1.2.5",
         "laravel/pint": "^1.27",
