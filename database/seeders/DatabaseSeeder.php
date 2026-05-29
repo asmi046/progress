@@ -19,6 +19,10 @@ class DatabaseSeeder extends Seeder
             MenuSeeder::class,
             PageSeeder::class,
             ContactSeeder::class,
+            EmissionDocumentSeeder::class,
+            ProjectSeeder::class,
+            NewsEventSeeder::class,
+            ProductServiceSeeder::class,
         ]);
     }
 }

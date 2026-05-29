@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use DB;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Schema;
 
 class MenuSeeder extends Seeder
 {
@@ -12,7 +13,58 @@ class MenuSeeder extends Seeder
      */
     public function run(): void
     {
+        Schema::disableForeignKeyConstraints();
+        DB::table('menus')->truncate();
+        Schema::enableForeignKeyConstraints();
+
         $mainMenuItems = [
+            [
+                'title' => 'Главная',
+                'order' => 1,
+                'lnk' => '/',
+            ],
+            [
+                'title' => 'Товары и услуги',
+                'order' => 2,
+                'lnk' => '/page/tovary-i-uslugi',
+            ],
+            [
+                'title' => 'Раскрытие информации',
+                'order' => 3,
+                'lnk' => '/page/raskrytie-informacii',
+                'children' => [
+                    [
+                        'title' => 'Эмиссионные документы',
+                        'order' => 1,
+                        'lnk' => '/emission-documents',
+                    ],
+                ],
+            ],
+            [
+                'title' => 'Инвесторам',
+                'order' => 4,
+                'lnk' => '/page/investoram',
+                'children' => [
+                    [
+                        'title' => 'Наши проекты',
+                        'order' => 1,
+                        'lnk' => '/projects',
+                    ],
+                    [
+                        'title' => 'Новости и события',
+                        'order' => 2,
+                        'lnk' => '/news-events',
+                    ],
+                ],
+            ],
+            [
+                'title' => 'Контакты',
+                'order' => 5,
+                'lnk' => '/contacts',
+            ],
+        ];
+
+        $sideMenuItems = [
             [
                 'title' => 'Главная',
                 'order' => 1,
@@ -29,6 +81,51 @@ class MenuSeeder extends Seeder
                 'lnk' => '/page/raskrytie-informacii',
             ],
             [
+                'title' => 'Эмиссионные документы',
+                'order' => 3,
+                'lnk' => '/emission-documents',
+            ],
+            [
+                'title' => 'Инвесторам',
+                'order' => 4,
+                'lnk' => '/page/investoram',
+            ],
+            [
+                'title' => 'Наши проекты',
+                'order' => 4,
+                'lnk' => '/projects',
+            ],
+
+            [
+                'title' => 'Новости и события',
+                'order' => 4,
+                'lnk' => '/news-events',
+            ],
+            [
+                'title' => 'Контакты',
+                'order' => 5,
+                'lnk' => '/contacts',
+            ],
+        ];
+
+        $footerMenuItems = [
+            [
+                'title' => 'Главная',
+                'order' => 1,
+                'lnk' => '/',
+            ],
+            [
+                'title' => 'Товары и услуги',
+                'order' => 2,
+                'lnk' => '/page/tovary-i-uslugi',
+            ],
+            [
+                'title' => 'Раскрытие информации',
+                'order' => 3,
+                'lnk' => '/page/raskrytie-informacii',
+
+            ],
+            [
                 'title' => 'Инвесторам',
                 'order' => 4,
                 'lnk' => '/page/investoram',
@@ -40,87 +137,45 @@ class MenuSeeder extends Seeder
             ],
         ];
 
-        DB::table('menus')->insert(array_map(
-            static fn (array $item): array => [
-                'menu_name' => 'Главное меню',
-                ...$item,
-            ],
-            $mainMenuItems,
-        ));
-
-        $emitDocsItemId = DB::table('menus')
-            ->where('menu_name', 'Главное меню')
-            ->where('title', 'Раскрытие информации')
-            ->where('lnk', '/page/raskrytie-informacii')
-            ->value('id');
-
-        if ($emitDocsItemId !== null) {
-            DB::table('menus')->insert([
-                'menu_name' => 'Главное меню',
-                'title' => 'Эмиссионные документы',
-                'order' => 1,
-                'parent' => $emitDocsItemId,
-                'lnk' => '/page/emissionnye-dokumenty',
-            ]);
-        }
-
-        $investorsItemId = DB::table('menus')
-            ->where('menu_name', 'Главное меню')
-            ->where('title', 'Инвесторам')
-            ->where('lnk', '/page/investoram')
-            ->value('id');
-
-        if ($investorsItemId !== null) {
-            DB::table('menus')->insert([
-                'menu_name' => 'Главное меню',
-                'title' => 'Наши проекты',
-                'order' => 1,
-                'parent' => $investorsItemId,
-                'lnk' => '/page/nashi-proekty',
-            ]);
-        }
-
-        DB::table('menus')->insert([
-            ...array_map(
-                static fn (array $item): array => [
-                    'menu_name' => 'Боковое меню',
-                    ...$item,
-                ],
-                $mainMenuItems,
-            ),
-            ...array_map(
-                static fn (array $item): array => [
-                    'menu_name' => 'Меню в подвале',
-                    ...$item,
-                ],
-                $mainMenuItems,
-            ),
-        ]);
-
-        $data_law = [
+        $lawMenuItems = [
             [
-                'menu_name' => 'Меню по ФЗ',
                 'title' => 'Политика в области обработки персональных данных',
                 'order' => 1,
                 'lnk' => '/page/politika-v-oblasti-obrabotki-personalnyx-dannyx',
             ],
-
             [
-                'menu_name' => 'Меню по ФЗ',
                 'title' => 'Согласие на обработку персональных данных',
                 'order' => 1,
                 'lnk' => '/page/soglasie-na-obrabotku-personalnyx-dannyx',
             ],
             [
-                'menu_name' => 'Меню по ФЗ',
                 'title' => 'О файлах Cookie',
                 'order' => 1,
                 'lnk' => '/page/o-failax-cookie',
             ],
-
         ];
 
-        DB::table('menus')->insert($data_law);
+        $this->insertMenuTree('Главное меню', $mainMenuItems);
+        $this->insertMenuTree('Боковое меню', $sideMenuItems);
+        $this->insertMenuTree('Меню в подвале', $footerMenuItems);
+        $this->insertMenuTree('Меню по ФЗ', $lawMenuItems);
+    }
 
+    private function insertMenuTree(string $menuName, array $items, ?int $parentId = null): void
+    {
+        foreach ($items as $item) {
+            $children = $item['children'] ?? [];
+            unset($item['children']);
+
+            $menuItemId = DB::table('menus')->insertGetId([
+                'menu_name' => $menuName,
+                'parent' => $parentId,
+                ...$item,
+            ]);
+
+            if (! empty($children)) {
+                $this->insertMenuTree($menuName, $children, $menuItemId);
+            }
+        }
     }
 }
