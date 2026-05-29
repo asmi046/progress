@@ -12,41 +12,90 @@ class MenuSeeder extends Seeder
      */
     public function run(): void
     {
-        $data = [
+        $mainMenuItems = [
             [
-                'menu_name' => 'Главное меню',
                 'title' => 'Главная',
                 'order' => 1,
                 'lnk' => '/',
             ],
             [
-                'menu_name' => 'Главное меню',
                 'title' => 'Товары и услуги',
                 'order' => 2,
                 'lnk' => '/page/tovary-i-uslugi',
             ],
             [
-                'menu_name' => 'Главное меню',
                 'title' => 'Раскрытие информации',
                 'order' => 3,
                 'lnk' => '/page/raskrytie-informacii',
             ],
             [
-                'menu_name' => 'Главное меню',
                 'title' => 'Инвесторам',
-                'order' => 3,
+                'order' => 4,
                 'lnk' => '/page/investoram',
             ],
             [
-                'menu_name' => 'Главное меню',
                 'title' => 'Контакты',
-                'order' => 4,
+                'order' => 5,
                 'lnk' => '/contacts',
             ],
-
         ];
 
-        DB::table('menus')->insert($data);
+        DB::table('menus')->insert(array_map(
+            static fn (array $item): array => [
+                'menu_name' => 'Главное меню',
+                ...$item,
+            ],
+            $mainMenuItems,
+        ));
+
+        $emitDocsItemId = DB::table('menus')
+            ->where('menu_name', 'Главное меню')
+            ->where('title', 'Раскрытие информации')
+            ->where('lnk', '/page/raskrytie-informacii')
+            ->value('id');
+
+        if ($emitDocsItemId !== null) {
+            DB::table('menus')->insert([
+                'menu_name' => 'Главное меню',
+                'title' => 'Эмиссионные документы',
+                'order' => 1,
+                'parent' => $emitDocsItemId,
+                'lnk' => '/page/emissionnye-dokumenty',
+            ]);
+        }
+
+        $investorsItemId = DB::table('menus')
+            ->where('menu_name', 'Главное меню')
+            ->where('title', 'Инвесторам')
+            ->where('lnk', '/page/investoram')
+            ->value('id');
+
+        if ($investorsItemId !== null) {
+            DB::table('menus')->insert([
+                'menu_name' => 'Главное меню',
+                'title' => 'Наши проекты',
+                'order' => 1,
+                'parent' => $investorsItemId,
+                'lnk' => '/page/nashi-proekty',
+            ]);
+        }
+
+        DB::table('menus')->insert([
+            ...array_map(
+                static fn (array $item): array => [
+                    'menu_name' => 'Боковое меню',
+                    ...$item,
+                ],
+                $mainMenuItems,
+            ),
+            ...array_map(
+                static fn (array $item): array => [
+                    'menu_name' => 'Меню в подвале',
+                    ...$item,
+                ],
+                $mainMenuItems,
+            ),
+        ]);
 
         $data_law = [
             [

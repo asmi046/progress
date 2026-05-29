@@ -4,7 +4,7 @@
         <div class="inner_wrapper">
             <x-burger-icon class="active_force"></x-burger-icon>
             <div class="main_menu_puncts">
-                <x-menues.puncts></x-menues.puncts>
+                <x-menues.puncts name="Боковое меню"></x-menues.puncts>
             </div>
 
         </div>

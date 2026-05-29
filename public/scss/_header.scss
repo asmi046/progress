@@ -31,8 +31,32 @@
             flex-direction: column;
             gap: 10px;
 
+            > li {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+                position: relative;
+            }
+
             > li > a {
                 color: $black_color;
+                text-decoration: none;
+            }
+
+            > li > ul {
+                margin: 0;
+                padding: 8px 0 0 12px;
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                gap: 6px;
+            }
+
+            > li > ul > li > a {
+                color: $blue_color;
+                font-size: 14px;
+                line-height: 1.3;
                 text-decoration: none;
             }
         }
@@ -75,6 +99,10 @@
                 flex-wrap: wrap;
                 align-items: center;
                 gap: 16px;
+
+                > li > ul {
+                    padding-left: 10px;
+                }
             }
         }
 
@@ -94,6 +122,52 @@
             .menue_puncts_list {
                 margin: auto;
                 justify-content: center;
+                align-items: center;
+
+                > li > ul {
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    min-width: 220px;
+                    padding: 15px 0;
+                    opacity: 0;
+                    visibility: hidden;
+
+                    pointer-events: none;
+                    z-index: 10;
+                    transition: $main_transition;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0;
+                    li {
+                        display: flex;
+                    }
+                    a {
+                        border: 1px solid $gray_border_color;
+                        box-shadow: $box_shadow;
+                        padding: 10px 12px;
+                        background-color: white;
+                        width: 100%;
+                    }
+
+                    li:first-child a {
+                        border-top-left-radius: $box_border_rad;
+                        border-top-right-radius: $box_border_rad;
+                    }
+
+                    li:last-child a {
+                        border-bottom-left-radius: $box_border_rad;
+                        border-bottom-right-radius: $box_border_rad;
+                    }
+                }
+
+                > li:hover > ul,
+                > li:focus-within > ul {
+                    opacity: 1;
+                    visibility: visible;
+                    // transform: translateY(0);
+                    pointer-events: auto;
+                }
             }
         }
 
