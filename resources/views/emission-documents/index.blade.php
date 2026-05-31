@@ -16,7 +16,11 @@
 
     <section class="page page_section">
         <div class="container">
-
+            <div class="emission-documents-list">
+                @foreach ($documents as $document)
+                    <x-emission-documents.item :document="$document"></x-emission-documents.item>
+                @endforeach
+            </div>
         </div>
     </section>
 @endsection
