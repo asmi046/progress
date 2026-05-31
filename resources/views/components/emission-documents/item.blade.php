@@ -3,7 +3,7 @@
 <article class="emission-document-item">
     <h2 class="emission-document-item__title">{{ $document->title }}</h2>
 
-    @if (! empty($document->description))
+    @if (!empty($document->description))
         <p class="emission-document-item__description">{{ $document->description }}</p>
     @endif
 
