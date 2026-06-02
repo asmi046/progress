@@ -17,6 +17,8 @@ class NewsEventController extends Controller
     {
         $newsEvent = NewsEvent::query()->where('slug', $slug)->firstOrFail();
 
-        return view('news-events.show', ['newsEvent' => $newsEvent]);
+        return view('news-events.show', [
+            'newsEvent' => $newsEvent,
+        ]);
     }
 }

@@ -16,7 +16,11 @@
 
     <section class="page page_section">
         <div class="container">
-
+            <div class="news-events-grid">
+                @foreach ($newsEvents as $item)
+                    <x-news-events.item :news-event="$item"></x-news-events.item>
+                @endforeach
+            </div>
         </div>
     </section>
 @endsection

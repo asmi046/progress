@@ -16,7 +16,11 @@
 
     <section class="page page_section">
         <div class="container">
-
+            <div class="projects-list">
+                @foreach ($projects as $project)
+                    <x-projects.item :project="$project"></x-projects.item>
+                @endforeach
+            </div>
         </div>
     </section>
 @endsection
