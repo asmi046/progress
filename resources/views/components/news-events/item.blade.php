@@ -2,7 +2,11 @@
 
 <a class="news-event-card" href="{{ route('news-events.show', $newsEvent->slug) }}">
     <span class="news-event-card__image-wrapper">
-        <img class="news-event-card__image" src="{{ Storage::url($newsEvent->img) }}" alt="{{ $newsEvent->title }}">
+        @if (!empty($newsEvent->img))
+            <img class="news-event-card__image" src="{{ Storage::url($newsEvent->img) }}" alt="{{ $newsEvent->title }}">
+        @else
+            <img class="news-event-card__image" src="{{ asset('img/no_photo.webp') }}" alt="{{ $newsEvent->title }}">
+        @endif
     </span>
 
     <span class="news-event-card__content">

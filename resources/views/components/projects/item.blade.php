@@ -1,11 +1,15 @@
 @props(['project'])
 
 <article class="project-card">
-    @if (!empty($project->img))
-        <div class="project-card__image-wrapper">
+
+    <div class="project-card__image-wrapper">
+        @if (!empty($project->img))
             <img class="project-card__image" src="{{ $project->img }}" alt="{{ $project->title }}">
-        </div>
-    @endif
+        @else
+            <img class="project-card__image" src="{{ asset('img/no_photo.webp') }}" alt="{{ $project->title }}">
+        @endif
+    </div>
+
 
     <div class="project-card__content">
         <h3 class="project-card__title">{{ $project->title }}</h3>

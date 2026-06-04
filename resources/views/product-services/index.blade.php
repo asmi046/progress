@@ -16,7 +16,11 @@
 
     <section class="page page_section">
         <div class="container">
-
+            <div class="product-services-grid">
+                @foreach ($productServices as $item)
+                    <x-product-services.item :product-service="$item"></x-product-services.item>
+                @endforeach
+            </div>
         </div>
     </section>
 @endsection

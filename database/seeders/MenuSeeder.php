@@ -26,7 +26,7 @@ class MenuSeeder extends Seeder
             [
                 'title' => 'Товары и услуги',
                 'order' => 2,
-                'lnk' => '/page/tovary-i-uslugi',
+                'lnk' => '/product-services',
             ],
             [
                 'title' => 'Раскрытие информации',
@@ -73,7 +73,7 @@ class MenuSeeder extends Seeder
             [
                 'title' => 'Товары и услуги',
                 'order' => 2,
-                'lnk' => '/page/tovary-i-uslugi',
+                'lnk' => '/product-services',
             ],
             [
                 'title' => 'Раскрытие информации',

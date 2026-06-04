@@ -17,7 +17,6 @@ class ProjectSeeder extends Seeder
             [
                 'title' => 'Модернизация производственного комплекса',
                 'slug' => Str::slug('Модернизация производственного комплекса'),
-                'img' => '/storage/projects/project-1.jpg',
                 'description' => 'Обновление ключевых производственных линий и инфраструктуры.',
                 'gallery' => json_encode([
                     '/storage/projects/project-1-1.jpg',
@@ -27,7 +26,6 @@ class ProjectSeeder extends Seeder
             [
                 'title' => 'Развитие логистической сети',
                 'slug' => Str::slug('Развитие логистической сети'),
-                'img' => '/storage/projects/project-2.jpg',
                 'description' => 'Увеличение скорости доставки и оптимизация маршрутов.',
                 'gallery' => json_encode([
                     '/storage/projects/project-2-1.jpg',

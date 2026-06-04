@@ -1,0 +1,67 @@
+@use "vars" as *;
+
+.product-services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
+.product-service-card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: $border_rad;
+    background-color: $gray_bg_color;
+}
+
+.product-service-card__image-link {
+    display: block;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+}
+
+.product-service-card__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-service-card__content {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 18px;
+    flex: 1;
+}
+
+.product-service-card__title {
+    margin: 0;
+    font-size: 22px;
+    line-height: 1.3;
+    font-weight: 700;
+}
+
+.product-service-card__more {
+    margin-top: auto;
+    font-weight: 600;
+    color: $main_color;
+    text-decoration: none;
+}
+
+@media (min-width: 520px) {
+    .product-services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 26px;
+    }
+
+    .product-service-card__content {
+        padding: 20px;
+    }
+}
+
+@media (min-width: 820px) {
+    .product-services-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
