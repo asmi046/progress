@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ProductService extends Model
+class SelhozProduct extends Model
 {
     protected $fillable = [
         'title',
@@ -12,9 +12,11 @@ class ProductService extends Model
         'img',
         'description',
         'galery',
+        'sertificates',
     ];
 
     protected $casts = [
         'galery' => 'array',
+        'sertificates' => 'array',
     ];
 }

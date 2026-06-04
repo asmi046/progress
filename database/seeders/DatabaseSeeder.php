@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
             ProjectSeeder::class,
             NewsEventSeeder::class,
             ProductServiceSeeder::class,
+            SelhozProductSeeder::class,
         ]);
     }
 }

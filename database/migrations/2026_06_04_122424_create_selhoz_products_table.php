@@ -11,13 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('product_services', function (Blueprint $table) {
+        Schema::create('selhoz_products', function (Blueprint $table) {
             $table->id();
             $table->string('title', 700);
             $table->string('slug', 700)->unique();
             $table->string('img', 700)->nullable();
             $table->text('description')->nullable();
             $table->json('galery')->nullable();
+            $table->json('sertificates')->nullable();
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('product_services');
+        Schema::dropIfExists('selhoz_products');
     }
 };
