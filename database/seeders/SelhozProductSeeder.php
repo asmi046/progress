@@ -24,7 +24,7 @@ class SelhozProductSeeder extends Seeder
             [
                 'title' => 'Соя',
                 'slug' => Str::slug('Соя'),
-                'img' => '/storage/sp/soya.webp',
+                'img' => 'sp/soya.webp',
                 'description' => 'Соя.',
                 'galery' => null,
                 'sertificates' => null,
@@ -32,7 +32,7 @@ class SelhozProductSeeder extends Seeder
             [
                 'title' => 'Пшеница (3-й, 4-й класс)',
                 'slug' => Str::slug('Пшеница (3-й, 4-й класс)'),
-                'img' => '/storage/sp/phenitsa.webp',
+                'img' => 'sp/phenitsa.webp',
                 'description' => 'Пшеница 3-го и 4-го класса.',
                 'galery' => null,
                 'sertificates' => null,
@@ -40,7 +40,7 @@ class SelhozProductSeeder extends Seeder
             [
                 'title' => 'Пивоваренный ячмень',
                 'slug' => Str::slug('Пивоваренный ячмень'),
-                'img' => '/storage/sp/yachmen.webp',
+                'img' => 'sp/yachmen.webp',
                 'description' => 'Пивоваренный ячмень.',
                 'galery' => null,
                 'sertificates' => null,
@@ -48,7 +48,7 @@ class SelhozProductSeeder extends Seeder
             [
                 'title' => 'Кукуруза',
                 'slug' => Str::slug('Кукуруза'),
-                'img' => '/storage/sp/kukuruza.webp',
+                'img' => 'sp/kukuruza.webp',
                 'description' => 'Кукуруза.',
                 'galery' => null,
                 'sertificates' => null,
@@ -56,7 +56,7 @@ class SelhozProductSeeder extends Seeder
             [
                 'title' => 'Подсолнечник',
                 'slug' => Str::slug('Подсолнечник'),
-                'img' => '/storage/sp/podsolnehnik.webp',
+                'img' => 'sp/podsolnehnik.webp',
                 'description' => 'Подсолнечник.',
                 'galery' => null,
                 'sertificates' => null,

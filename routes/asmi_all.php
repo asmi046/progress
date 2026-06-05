@@ -23,3 +23,4 @@ Route::get('/news-events/{slug}', [NewsEventController::class, 'show'])->name('n
 
 Route::get('/product-services', [ProductServiceController::class, 'index'])->name('product-services.index');
 Route::get('/product-services/{slug}', [ProductServiceController::class, 'show'])->name('product-services.show');
+Route::get('/product-services/selhoz/{slug}', [ProductServiceController::class, 'show_selhoz'])->name('product-services.selhoz.show');

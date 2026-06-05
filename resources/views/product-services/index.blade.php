@@ -16,9 +16,18 @@
 
     <section class="page page_section">
         <div class="container">
+            <h2 class="page__title">Товары и услуги</h2>
             <div class="product-services-grid">
                 @foreach ($productServices as $item)
                     <x-product-services.item :product-service="$item"></x-product-services.item>
+                @endforeach
+            </div>
+
+            <h2 class="page__title">Реализация сельскохозяйственной продукции</h2>
+
+            <div class="product-services-grid">
+                @foreach ($agriculturalProducts as $item)
+                    <x-product-services.item-selhoz :product-service="$item"></x-product-services.item-selhoz>
                 @endforeach
             </div>
         </div>
