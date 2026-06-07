@@ -11,6 +11,7 @@ use App\MoonShine\Resources\Page\PageResource;
 use App\MoonShine\Resources\ProductService\ProductServiceResource;
 use App\MoonShine\Resources\Project\ProjectResource;
 use App\MoonShine\Resources\SelhozProduct\SelhozProductResource;
+use App\MoonShine\Resources\SeoDataResource;
 use MoonShine\ColorManager\ColorManager;
 use MoonShine\ColorManager\Palettes\PurplePalette;
 use MoonShine\Contracts\ColorManager\ColorManagerContract;
@@ -40,6 +41,7 @@ final class MoonShineLayout extends AppLayout
             MenuGroup::make('Общий контент', [
                 MenuItem::make(PageResource::class, 'Страницы', 'document-text'),
                 MenuItem::make(MenuResource::class, 'Меню')->icon('bars-3-bottom-left'),
+                MenuItem::make(SeoDataResource::class, 'SEO данные')->icon('magnifying-glass'),
             ]),
 
             MenuItem::make(EmissionDocumentResource::class, 'Эмиссионные документы'),
@@ -49,7 +51,6 @@ final class MoonShineLayout extends AppLayout
             MenuItem::make(SelhozProductResource::class, 'Сельхозпродукты'),
 
             ...parent::menu(),
-
         ];
     }
 

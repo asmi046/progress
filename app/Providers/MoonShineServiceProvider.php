@@ -13,6 +13,7 @@ use App\MoonShine\Resources\Page\PageResource;
 use App\MoonShine\Resources\ProductService\ProductServiceResource;
 use App\MoonShine\Resources\Project\ProjectResource;
 use App\MoonShine\Resources\SelhozProduct\SelhozProductResource;
+use App\MoonShine\Resources\SeoDataResource;
 use Illuminate\Support\ServiceProvider;
 use MoonShine\Contracts\Core\DependencyInjection\CoreContract;
 use MoonShine\Laravel\DependencyInjection\MoonShineConfigurator;
@@ -35,6 +36,7 @@ class MoonShineServiceProvider extends ServiceProvider
                 ProjectResource::class,
                 ProductServiceResource::class,
                 SelhozProductResource::class,
+                SeoDataResource::class,
             ])
             ->pages([
                 ...$core->getConfig()->getPages(),
