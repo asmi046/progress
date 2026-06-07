@@ -13,7 +13,7 @@ class ProjectSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('projects')->upsert([
+        $items = [
             [
                 'title' => 'Модернизация производственного комплекса',
                 'slug' => Str::slug('Модернизация производственного комплекса'),
@@ -22,16 +22,28 @@ class ProjectSeeder extends Seeder
                     '/storage/projects/project-1-1.jpg',
                     '/storage/projects/project-1-2.jpg',
                 ]),
+                'seo_title' => 'Модернизация производственного комплекса - проект компании Прогресс',
+                'seo_description' => 'Проект модернизации производственного комплекса: обновление линий, рост эффективности и технологическое развитие.',
             ],
-            [
-                'title' => 'Развитие логистической сети',
-                'slug' => Str::slug('Развитие логистической сети'),
-                'description' => 'Увеличение скорости доставки и оптимизация маршрутов.',
-                'gallery' => json_encode([
-                    '/storage/projects/project-2-1.jpg',
-                    '/storage/projects/project-2-2.jpg',
-                ]),
-            ],
-        ], ['slug'], ['title', 'img', 'description', 'gallery']);
+        ];
+
+        $itemsForUpsert = array_map(function (array $item): array {
+            unset($item['seo_title'], $item['seo_description']);
+
+            return $item;
+        }, $items);
+
+        DB::table('projects')->upsert($itemsForUpsert, ['slug'], ['title', 'description', 'gallery']);
+
+        foreach ($items as $item) {
+            DB::table('seo_data')->updateOrInsert(
+                ['url' => 'projects/'.$item['slug']],
+                [
+                    'url' => 'projects/'.$item['slug'],
+                    'seo_title' => $item['seo_title'] ?? $item['title'],
+                    'seo_description' => $item['seo_description'] ?? $item['title'],
+                ]
+            );
+        }
     }
 }

@@ -58,7 +58,7 @@ img {
 
 .icon_line {
     display: flex;
-    color: white;
+    color: $main_color;
     gap: 10px;
 
     & > * {

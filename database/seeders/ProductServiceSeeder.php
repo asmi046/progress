@@ -37,12 +37,12 @@ class ProductServiceSeeder extends Seeder
         Storage::disk('public')->put('services/sht_8.webp', file_get_contents(public_path('seeder_data/services/selhoz/sht_8.webp')), 'public');
         Storage::disk('public')->put('services/sht_9.webp', file_get_contents(public_path('seeder_data/services/selhoz/sht_9.webp')), 'public');
 
-        DB::table('product_services')->upsert([
+        $items = [
             [
-                'title' => 'Услуги строительной и сельскохозяйственной специальной техники',
-                'slug' => Str::slug('Услуги строительной и сельскохозяйственной специальной техники'),
+                'title' => 'Аренда строительной и сельскохозяйственной специальной техники',
+                'slug' => Str::slug('Аренда строительной и сельскохозяйственной специальной техники'),
                 'img' => 'services/sht_1.webp',
-                'description' => 'Комплексные поставки зерновых и масличных культур.',
+                'description' => file_get_contents(public_path('seeder_data/services/selhoz/description.html')),
                 'galery' => json_encode([
                     ['img' => 'services/sht_1.webp', 'title' => ''],
                     ['img' => 'services/sht_2.webp', 'title' => ''],
@@ -54,12 +54,14 @@ class ProductServiceSeeder extends Seeder
                     ['img' => 'services/sht_8.webp', 'title' => ''],
                     ['img' => 'services/sht_9.webp', 'title' => ''],
                 ]),
+                'seo_title' => 'Аренда спецтехники в Курске - строительная и сельхоз техника',
+                'seo_description' => 'Предоставляем в аренду строительную и сельскохозяйственную спецтехнику с опытными операторами и гибкими условиями.',
             ],
             [
                 'title' => 'Услуги по хранению сельскохозяйственной продукции и семян',
                 'slug' => Str::slug('Услуги по хранению сельскохозяйственной продукции и семян'),
                 'img' => 'services/hran_1.webp',
-                'description' => 'Организация хранения и транспортировки продукции.',
+                'description' => file_get_contents(public_path('seeder_data/services/hran/description.html')),
                 'galery' => json_encode([
                     ['img' => 'services/hran_1.webp', 'title' => ''],
                     ['img' => 'services/hran_2.webp', 'title' => ''],
@@ -68,12 +70,14 @@ class ProductServiceSeeder extends Seeder
                     ['img' => 'services/hran_5.webp', 'title' => ''],
                     ['img' => 'services/hran_6.webp', 'title' => ''],
                 ]),
+                'seo_title' => 'Хранение сельхозпродукции и семян в Курске',
+                'seo_description' => 'Услуги хранения сельскохозяйственной продукции и семян: современные мощности, контроль условий и сохранность качества.',
             ],
             [
                 'title' => 'Аренда офисных и складских помещений в г. Курске',
                 'slug' => Str::slug('Аренда офисных и складских помещений в г. Курске'),
                 'img' => 'services/arenda_1.webp',
-                'description' => 'Предоставление офисных и складских помещений для аренды.',
+                'description' => file_get_contents(public_path('seeder_data/services/arenda/description.html')),
                 'galery' => json_encode([
                     ['img' => 'services/arenda_1.webp', 'title' => ''],
                     ['img' => 'services/arenda_2.webp', 'title' => ''],
@@ -81,8 +85,29 @@ class ProductServiceSeeder extends Seeder
                     ['img' => 'services/arenda_4.webp', 'title' => ''],
                     ['img' => 'services/arenda_5.webp', 'title' => ''],
                 ]),
+                'seo_title' => 'Аренда офисов и складов в Курске',
+                'seo_description' => 'Сдаем в аренду офисные и складские помещения в Курске: удобное расположение, развитая инфраструктура и прозрачные условия.',
             ],
 
-        ], ['slug'], ['title', 'img', 'description']);
+        ];
+
+        $itemsForUpsert = array_map(function (array $item): array {
+            unset($item['seo_title'], $item['seo_description']);
+
+            return $item;
+        }, $items);
+
+        DB::table('product_services')->upsert($itemsForUpsert, ['slug'], ['title', 'img', 'description', 'galery']);
+
+        foreach ($items as $item) {
+            DB::table('seo_data')->updateOrInsert(
+                ['url' => 'product-services/'.$item['slug']],
+                [
+                    'url' => 'product-services/'.$item['slug'],
+                    'seo_title' => $item['seo_title'] ?? $item['title'],
+                    'seo_description' => $item['seo_description'] ?? $item['title'],
+                ]
+            );
+        }
     }
 }

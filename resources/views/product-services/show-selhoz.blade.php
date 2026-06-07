@@ -4,14 +4,14 @@
 
     <section class="section-header">
         <div class="container">
-            <h1>{{ $project->title ?? '' }}</h1>
+            <h1>{{ $productService->title ?? '' }}</h1>
         </div>
         <div class="shadow"></div>
     </section>
 
     <section class="breadcrumbs_section">
         <div class="container">
-            <x-breadcrumbs.main title="{{ $project->title ?? '' }}"></x-breadcrumbs.main>
+            <x-breadcrumbs.main title="{{ $productService->title ?? '' }}"></x-breadcrumbs.main>
         </div>
     </section>
 
@@ -22,18 +22,18 @@
             <div class="product-service-detail">
                 <div class="product-service-detail__gallery">
                     <swiper-container class="product-service-detail__swiper js-product-gallery-swiper" init="false">
-                        @if ($project->img)
+                        @if ($productService->img)
                             <swiper-slide class="product-service-detail__slide">
-                                <img class="product-service-detail__image" src="{{ Storage::url($project->img) }}"
-                                    alt="{{ $project->title ?? '' }}">
+                                <img class="product-service-detail__image" src="{{ Storage::url($productService->img) }}"
+                                    alt="{{ $productService->title ?? '' }}">
                             </swiper-slide>
                         @endif
 
-                        @if ($project->galery)
-                            @foreach ($project->galery as $image)
+                        @if ($productService->galery)
+                            @foreach ($productService->galery as $image)
                                 <swiper-slide class="product-service-detail__slide">
                                     <img class="product-service-detail__image" src="{{ Storage::url($image['img']) }}"
-                                        alt="{{ $project->title ?? '' }}">
+                                        alt="{{ $productService->title ?? '' }}">
                                 </swiper-slide>
                             @endforeach
                         @endif
@@ -43,7 +43,13 @@
                 </div>
 
                 <div class="product-service-detail__content text_styles">
-                    {!! $project->description ?? '' !!}
+                    {!! $productService->description ?? '' !!}
+                    @if ($productService->sertificates)
+                        @foreach ($productService->sertificates as $certificate)
+                            <x-a-icon href="{{ Storage::url($certificate['file']) }}"
+                                icon="doc_pdf">{{ $certificate['title'] }}</x-a-icon>
+                        @endforeach
+                    @endif
                 </div>
             </div>
         </div>

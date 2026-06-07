@@ -27,6 +27,8 @@
 </head>
 
 <body>
+    @include('allicon')
+
     <section id="clinic-header" class="clinic-header">
         <div class="container">
             <div class="clinic-header__inner">

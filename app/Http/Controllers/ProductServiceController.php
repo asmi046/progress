@@ -22,6 +22,8 @@ class ProductServiceController extends Controller
     {
         $productService = ProductService::query()->where('slug', $slug)->firstOrFail();
 
+        // dd($productService);
+
         return view('product-services.show', [
             'productService' => $productService,
         ]);
@@ -31,7 +33,7 @@ class ProductServiceController extends Controller
     {
         $productService = SelhozProduct::query()->where('slug', $slug)->firstOrFail();
 
-        return view('product-services.show', [
+        return view('product-services.show-selhoz', [
             'productService' => $productService,
         ]);
     }
