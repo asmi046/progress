@@ -37,6 +37,38 @@ class SeoDataSeeder extends Seeder
                 // 'seoable_id' => 1,
                 // 'seoable_type' => "App\Models\Page"
             ],
+            [
+                'url' => 'emission-documents',
+                'seo_title' => 'Эмиссионные документы',
+                'seo_description' => 'Эмиссионные документы компании Прогресс.',
+                'page_title' => '',
+                // 'seoable_id' => 1,
+                // 'seoable_type' => "App\Models\Page"
+            ],
+            [
+                'url' => 'projects',
+                'seo_title' => 'Наши проекты',
+                'seo_description' => 'Информация о наших проектах.',
+                'page_title' => '',
+                // 'seoable_id' => 1,
+                // 'seoable_type' => "App\Models\Page"
+            ],
+            [
+                'url' => 'news-events',
+                'seo_title' => 'Новости и события',
+                'seo_description' => 'Информация о наших новостях и событиях.',
+                'page_title' => '',
+                // 'seoable_id' => 1,
+                // 'seoable_type' => "App\Models\Page"
+            ],
+            [
+                'url' => 'product-services',
+                'seo_title' => 'Товары и услуги',
+                'seo_description' => 'Информация о наших товарах и услугах.',
+                'page_title' => '',
+                // 'seoable_id' => 1,
+                // 'seoable_type' => "App\Models\Page"
+            ],
         ];
 
         DB::table('seo_data')->insert($data);

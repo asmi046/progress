@@ -4,8 +4,13 @@ declare(strict_types=1);
 
 namespace App\MoonShine\Layouts;
 
+use App\MoonShine\Resources\EmissionDocument\EmissionDocumentResource;
 use App\MoonShine\Resources\MenuResource;
+use App\MoonShine\Resources\NewsEvent\NewsEventResource;
 use App\MoonShine\Resources\Page\PageResource;
+use App\MoonShine\Resources\ProductService\ProductServiceResource;
+use App\MoonShine\Resources\Project\ProjectResource;
+use App\MoonShine\Resources\SelhozProduct\SelhozProductResource;
 use MoonShine\ColorManager\ColorManager;
 use MoonShine\ColorManager\Palettes\PurplePalette;
 use MoonShine\Contracts\ColorManager\ColorManagerContract;
@@ -31,13 +36,20 @@ final class MoonShineLayout extends AppLayout
     protected function menu(): array
     {
         return [
-            MenuGroup::make('Контенткаль', [
-                MenuItem::make(url('/'), 'Открыть сайт', 'globe-alt')->blank(),
+            MenuItem::make(url('/'), 'Открыть сайт', 'globe-alt')->blank(),
+            MenuGroup::make('Общий контент', [
                 MenuItem::make(PageResource::class, 'Страницы', 'document-text'),
                 MenuItem::make(MenuResource::class, 'Меню')->icon('bars-3-bottom-left'),
-            ], 'globe-alt'),
+            ]),
+
+            MenuItem::make(EmissionDocumentResource::class, 'Эмиссионные документы'),
+            MenuItem::make(NewsEventResource::class, 'Новости и события'),
+            MenuItem::make(ProjectResource::class, 'Проекты'),
+            MenuItem::make(ProductServiceResource::class, 'Товары и услуги'),
+            MenuItem::make(SelhozProductResource::class, 'Сельхозпродукты'),
 
             ...parent::menu(),
+
         ];
     }
 

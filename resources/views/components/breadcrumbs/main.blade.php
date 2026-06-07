@@ -82,8 +82,8 @@
             @elseif (Request::route()->named('projects.show'))
                 <span class="sep"> / </span>
                 <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <a title="Новости и события" itemprop="item" href="{{ route('news-events.index') }}">
-                        <span itemprop="name">Новости и события</span>
+                    <a title="Наши проекты" itemprop="item" href="{{ route('projects.index') }}">
+                        <span itemprop="name">Наши проекты</span>
                         <meta itemprop="position" content="1">
                     </a>
                 </span>
