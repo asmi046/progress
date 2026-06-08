@@ -33,7 +33,7 @@
         <div class="container">
             <div class="clinic-header__inner">
                 <a class="clinic-header__logo" href="{{ url('/') }}" aria-label="На главную">
-                    <img src="{{ asset('img/logo.png') }}" alt="ЗАО Прогресс">
+                    <img src="{{ asset('img/logo.png') }}" alt="ЗАО &quot;ПРОГРЕСС&quot;">
                 </a>
 
                 <div class="clinic-header__menu">
@@ -58,7 +58,7 @@
             <div class="site-footer__inner">
                 <div class="site-footer__logo-block">
                     <a href="{{ url('/') }}" aria-label="На главную">
-                        <img src="{{ asset('img/logo.png') }}" alt="ЗАО Прогресс" class="site-footer__logo">
+                        <img src="{{ asset('img/logo.png') }}" alt="ЗАО ПРОГРЕСС" class="site-footer__logo">
                     </a>
                 </div>
 

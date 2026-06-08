@@ -30,6 +30,8 @@
                     <x-product-services.item-selhoz :product-service="$item"></x-product-services.item-selhoz>
                 @endforeach
             </div>
+
+            <x-tovar-note></x-tovar-note>
         </div>
     </section>
 @endsection

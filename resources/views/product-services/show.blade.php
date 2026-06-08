@@ -37,6 +37,7 @@
                     {!! $productService->description ?? '' !!}
                 </div>
             </div>
+            <x-tovar-note></x-tovar-note>
         </div>
     </section>
 @endsection

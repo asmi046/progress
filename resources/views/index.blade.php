@@ -19,10 +19,10 @@
             <swiper-slide class="main-swiper__slide">
                 <div class="container">
                     <img class="main-swiper__image" src="{{ asset('img/b1_main.webp') }}"
-                        alt="ЗАО Прогресс - Точные технологии">
+                        alt="ЗАО &quot;ПРОГРЕСС&quot; - Точные технологии">
                     <div class="container main-swiper__content-wrap">
                         <div class="main-swiper__content">
-                            <h1 class="main-swiper__title">ЗАО "ПРОГРЕСС"</h1>
+                            <h1 class="main-swiper__title">ЗАО «ПРОГРЕСС»</h1>
                             <p class="main-swiper__subtitle">Точные технологии. <br>Высокие стандарты. <br>Уверенный
                                 результат.</p>
                         </div>
@@ -34,10 +34,10 @@
             <swiper-slide class="main-swiper__slide">
                 <div class="container">
                     <img class="main-swiper__image" src="{{ asset('img/b2_main.webp') }}"
-                        alt="ЗАО Прогресс - Высокие стандарты">
+                        alt="ЗАО &quot;ПРОГРЕСС&quot; - Высокие стандарты">
                     <div class="container main-swiper__content-wrap">
                         <div class="main-swiper__content">
-                            <p class="main-swiper__title">ЗАО "ПРОГРЕСС"</p>
+                            <p class="main-swiper__title">ЗАО «ПРОГРЕСС»</p>
                             <p class="main-swiper__subtitle">Точные технологии. <br>Высокие стандарты. <br>Уверенный
                                 результат.</p>
                         </div>

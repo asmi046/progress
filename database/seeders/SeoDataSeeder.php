@@ -15,8 +15,8 @@ class SeoDataSeeder extends Seeder
         $data = [
             [
                 'url' => '/',
-                'seo_title' => 'Агропромышленная компания Прогресс - современные сельскохозяйственные технологии',
-                'seo_description' => 'Агропромышленная компания Прогресс предлагает современные решения для сельского хозяйства.',
+                'seo_title' => 'Агропромышленная компания ЗАО «ПРОГРЕСС» - современные сельскохозяйственные технологии',
+                'seo_description' => 'Агропромышленная компания ЗАО «ПРОГРЕСС» предлагает современные решения для сельского хозяйства.',
                 'page_title' => '',
                 // 'seoable_id' => 1,
                 // 'seoable_type' => "App\Models\Page"
@@ -32,7 +32,7 @@ class SeoDataSeeder extends Seeder
             [
                 'url' => 'for-investors',
                 'seo_title' => 'Для инвесторов',
-                'seo_description' => 'Информация для инвесторов о компании Прогресс.',
+                'seo_description' => 'Информация для инвесторов о компании ЗАО «ПРОГРЕСС».',
                 'page_title' => '',
                 // 'seoable_id' => 1,
                 // 'seoable_type' => "App\Models\Page"
@@ -40,7 +40,7 @@ class SeoDataSeeder extends Seeder
             [
                 'url' => 'emission-documents',
                 'seo_title' => 'Эмиссионные документы',
-                'seo_description' => 'Эмиссионные документы компании Прогресс.',
+                'seo_description' => 'Эмиссионные документы компании ЗАО «ПРОГРЕСС».',
                 'page_title' => '',
                 // 'seoable_id' => 1,
                 // 'seoable_type' => "App\Models\Page"

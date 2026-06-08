@@ -16,7 +16,7 @@ class ContactSeeder extends Seeder
             [
                 'name' => 'site_name',
                 'title' => 'Имя сайта',
-                'value' => 'Прогресс',
+                'value' => 'ЗАО «ПРОГРЕСС»',
             ],
             [
                 'name' => 'phone',
@@ -67,7 +67,7 @@ class ContactSeeder extends Seeder
             [
                 'name' => 'gd_dolgnost',
                 'title' => 'Должность генерального директора',
-                'value' => 'Генеральный директор ЗАО "Прогресс" ',
+                'value' => 'Генеральный директор ЗАО «ПРОГРЕСС» ',
             ],
             [
                 'name' => 'gd_name',
@@ -83,7 +83,7 @@ class ContactSeeder extends Seeder
             [
                 'name' => 'id_dolgnost',
                 'title' => 'Должность исполнительного директора',
-                'value' => 'Исполнительный директор ЗАО "Прогресс" ',
+                'value' => 'Исполнительный директор ЗАО «ПРОГРЕСС» ',
             ],
             [
                 'name' => 'id_name',
@@ -99,12 +99,12 @@ class ContactSeeder extends Seeder
             [
                 'name' => 'company_name',
                 'title' => 'Наименование компании',
-                'value' => 'Закрытое акционерное общество «Прогресс» (ЗАО «Прогресс»)',
+                'value' => 'Закрытое акционерное общество «ПРОГРЕСС» (ЗАО «ПРОГРЕСС»)',
             ],
             [
                 'name' => 'company_short_name',
                 'title' => 'Краткое наименование',
-                'value' => 'ЗАО «Прогресс»',
+                'value' => 'ЗАО «ПРОГРЕСС»',
             ],
             [
                 'name' => 'inn',
