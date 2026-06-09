@@ -58,7 +58,7 @@ class ProductServiceSeeder extends Seeder
                 'seo_description' => 'Предоставляем в аренду строительную и сельскохозяйственную спецтехнику с опытными операторами и гибкими условиями.',
             ],
             [
-                'title' => 'Услуги по хранению сельскохозяйственной продукции и семян',
+                'title' => 'Услуги по хранению сельскохозяйственной продукции и семян в г. Курске и Солнцевском районе Курской области',
                 'slug' => Str::slug('Услуги по хранению сельскохозяйственной продукции и семян'),
                 'img' => 'services/hran_1.webp',
                 'description' => file_get_contents(public_path('seeder_data/services/hran/description.html')),
