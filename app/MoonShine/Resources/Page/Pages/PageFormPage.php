@@ -91,7 +91,7 @@ final class PageFormPage extends FormPage
             'title' => ['required', 'string', 'max:255'],
             'slug' => ['nullable', 'string', 'max:255'],
             'parent' => ['nullable', 'integer', 'exists:pages,id'],
-            'template' => ['required', 'string', 'max:255'],
+            'template' => ['string', 'max:255'],
             'img' => ['nullable', 'string', 'max:255'],
             'description' => ['nullable', 'string'],
             'images' => ['nullable'],
