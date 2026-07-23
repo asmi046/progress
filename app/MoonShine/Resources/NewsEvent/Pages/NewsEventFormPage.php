@@ -41,7 +41,7 @@ class NewsEventFormPage extends FormPage
 
                 Image::make('Изображение', 'img')->removable(),
 
-                TinyMce::make('Описание', 'description'),
+                TinyMce::make('Описание', 'description')->addOption('file_manager', 'laravel-filemanager'),
             ]),
         ];
     }
