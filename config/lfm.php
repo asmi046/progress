@@ -170,6 +170,7 @@ return [
             'image/tiff',
             'image/jp2',
             'image/heic',
+            'video/mp4',
         ],
     ],
 

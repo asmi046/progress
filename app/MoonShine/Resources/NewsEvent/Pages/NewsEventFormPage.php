@@ -37,7 +37,7 @@ class NewsEventFormPage extends FormPage
                 Text::make('Заголовок', 'title')
                     ->required()->unescape(),
 
-                Slug::make('Ссылка', 'slug'),
+                Slug::make('Ссылка', 'slug')->from('title'),
 
                 Image::make('Изображение', 'img')->removable(),
 
