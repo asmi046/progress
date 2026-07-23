@@ -11,7 +11,7 @@
 
     <section class="breadcrumbs_section">
         <div class="container">
-            <x-breadcrumbs.main title="{{ $newsEvent->title ?? '' }}"></x-breadcrumbs.main>
+            <x-breadcrumbs.main title="{!! $newsEvent->title ?? '' !!}"></x-breadcrumbs.main>
         </div>
     </section>
 

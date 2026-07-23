@@ -119,11 +119,12 @@
     }
 
     .product-service-detail {
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        grid-template-columns: minmax(0, 1fr);
         align-items: start;
         gap: 36px;
 
         &__swiper {
+            max-width: 700px;
             height: 460px;
         }
     }
